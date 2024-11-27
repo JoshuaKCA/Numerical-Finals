@@ -1,5 +1,5 @@
 import customtkinter
-from Mainlogic import calculate_secant_method  
+from MainLogic import calculate_secant_method  # Ensure this matches the exact file name
 
 root = customtkinter.CTk()
 screen_width = root.winfo_screenwidth()
