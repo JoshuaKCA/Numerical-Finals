@@ -7,7 +7,7 @@ def calculate_secant_method(x1, x0, user_input, iterations):
     
     # Function Evaluation
     function = sp.sympify(user_input)
-    print(f"Stored function: {function}")
+    print(f"Stored function: {function}\n")
     
     # x1 function value
     ans_x1 = function.subs(x, x1)
@@ -42,6 +42,7 @@ def calculate_secant_method(x1, x0, user_input, iterations):
     temp = sp.sympify(round(formula, 6)) 
 
     # Print values
+    print(f"\nIteration 1:")
     print(f"x0 value = {x0}")
     print(f"x1 value = {x1}")
     print(f"x0 function = {round(num_ans_x0, 6)}")
@@ -64,7 +65,7 @@ def calculate_secant_method(x1, x0, user_input, iterations):
         temp = sp.sympify(round(formula, 6))
         
         # Print values
-        print(f"Iteration {i+2}:")
+        print(f"\nIteration {i+2}:")
         print(f"x0 value = {x0}")
         print(f"x1 value = {x1}")
         print(f"x0 function = {round(num_ans_x0, 6)}")
@@ -142,7 +143,7 @@ class App(customtkinter.CTk):
         
         # Use the imported function to calculate the result
         result = calculate_secant_method(x1, x0, user_input, iterations)
-        update_callback(f"Result: {result}\n")
+        update_callback(f"\nResult: {result}\n")
         
         # Restore the original stdout
         sys.stdout = sys.__stdout__
